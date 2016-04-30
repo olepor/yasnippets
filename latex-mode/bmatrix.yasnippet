@@ -1,0 +1,20 @@
+# -*- mode: snippet -*-
+# name: bmatrix
+# key: bmatrix
+# contributor: olepor@student.matnat.uio.no
+# type: command
+# --
+(let* ((snippet "")
+     (counter 1)
+     (matrix-dimensions (read-number "mxn: "))
+     (rows (read-number "rows: "))
+     (columns (read-number "columns: "))
+     )
+  (setq snippet "\\[\n\\begin{bmatrix}\n")
+  (dotimes (i rows)
+    (dotimes (j columns)
+      (setq snippet (concat snippet (format "${%d:%d}" counter counter) "& "))
+      (setq counter (1+ counter)))
+    (setq snippet (concat snippet "\\\\\\ \n")))
+    (setq snippet (concat snippet "\\end{bmatrix} \n \\] \n $0"))
+  (yas-expand-snippet snippet))

@@ -1,0 +1,28 @@
+# -*- mode: snippet -*-
+# name: och-template
+# key: och
+# contributor: olepor@student.matnat.uio.no
+# type: snippet
+# condition: (< (buffer-chars-modified-tick) 10)
+# --
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[norsk]{babel}
+\usepackage[a4paper]{geometry}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{color}
+
+\title{${1:Title}}
+\author{Ole Petter Orhagen}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\newpage
+
+$0
+
+\end{document}
